@@ -18,9 +18,9 @@ return new class extends Migration
             $table->text('product_long_des');
             $table->integer('price');
             $table->string('product_category_name');
-            $table->string('product_subcategory_name');
+            //$table->string('product_subcategory_name');
             $table->integer('product_category_id');
-            $table->integer('product_subcategory_id');
+            //$table->integer('product_subcategory_id');
             $table->string('product_img');
             $table->string('slug');
             $table->timestamps();

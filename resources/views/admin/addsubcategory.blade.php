@@ -13,21 +13,23 @@ Add SubCategory - Beauty Bloom
                       <small class="text-muted float-end">Input Information</small>
                     </div>
                     <div class="card-body">
-                      <form action="" method="POST">
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Sub Category Name</label>
+                      <form action="{{route('storesubcategory')}}" method="POST">
+                        @csrf
+                       <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="subcategory_name">Sub Category Name</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="subcategory-name" name="subcategory_name" placeholder="Enter subcategory name" />
+                            <input type="text" class="form-control" id="subcategory_name" name="subcategory_name" placeholder="Enter subcategory name" />
                           </div>
                         </div>
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Select Category</label>
                           <div class="col-sm-10">
-                          <select class="form-select" id="category" name="category" aria-label="Default select example">
-                          <option selected>Open this select menu</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <select class="form-select" id="category_id" name="category_id" aria-label="Default select example">
+                          <option disabled selected>Open this select menu</option>
+                          @foreach($categories as $category)
+                          
+                          <option value="{{$category->id}}">{{$category->category_name}}</option>
+                          @endforeach
                         </select>
                           </div>
                         </div>
@@ -42,3 +44,4 @@ Add SubCategory - Beauty Bloom
                 </div>
 </div>
 @endsection
+

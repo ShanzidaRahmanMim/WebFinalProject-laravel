@@ -136,6 +136,12 @@
                 <div data-i18n="Analytics">Pending Orders</div>
               </a>
             </li>
+            <li class="menu-item">
+              <a href="{{route('logout')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Logout</div>
+              </a>
+            </li>
             <!-- <li class="menu-item">
               <a href="{{route('admindashboard')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
