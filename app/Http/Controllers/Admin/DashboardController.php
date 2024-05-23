@@ -28,8 +28,16 @@ class DashboardController extends Controller
 
         ];
         if(Auth::attempt($credentials))
-        {
-            return redirect()->route('admindashboard');
+        { 
+            if(Auth::guard('web')->user()->role==1)
+            {
+                return redirect()->route('admindashboard');
+            }
+            else{
+                
+                return redirect()->route('userprofile');
+            
+            }
         }
         else
         {
@@ -53,6 +61,7 @@ class DashboardController extends Controller
         $user->password=Hash::make($request->password);
         $user->status='pending';
         $user->token=$token;
+        $user->role=2;
         $user->save();
         $verification_link=url('registration/verify/'.$token.'/'.$request->email);
         $subject='Registration Confirmation';
@@ -114,6 +123,7 @@ class DashboardController extends Controller
         $user->update();
         echo 'Password has been reset successfully.';
      }
+        
      
 
      

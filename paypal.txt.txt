@@ -1,0 +1,22 @@
+ Developer acc:
+ Email:
+ Password:payment2007087
+
+ sandbox personal:
+
+
+
+
+
+
+
+
+
+ sandbox business:
+
+
+
+
+
+ API Credential:
+ app name:app_store

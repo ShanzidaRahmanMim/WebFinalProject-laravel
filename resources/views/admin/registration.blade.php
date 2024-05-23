@@ -62,7 +62,7 @@
 
 <div class="container">
     <h3>Registration Form</h3>
-    <form action="{{route('registrationsubmit')}}" method="post">
+    <form action="{{route('registrationsubmit')}}" method="post" autocomplete="off">
         @csrf
         
         <div>
@@ -71,11 +71,11 @@
         </div>
         <div>
             <label for="email" class="form-label">Email Address</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" autocomplete="off" required>
         </div>
         <div>
             <label for="password" class="form-label">Password</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" autocomplete="off" required>
         </div>
         <div>
             <label for="retype_password" class="form-label">Retype Password</label>
@@ -84,6 +84,12 @@
         <input type="submit" class="btn" value="Make Registration">
     </form>
 </div>
+<script>
+    window.onload = function() {
+        document.getElementById('email').value = '';
+        document.getElementById('password').value = '';
+    }
+</script>
 
 </body>
 </html>

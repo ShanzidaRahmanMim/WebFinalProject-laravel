@@ -44,7 +44,7 @@ $categories=App\Models\Category::latest()->get();
       <div class="banner_bg_main">
          <!-- header top section start -->
          <div class="container">
-            <div class="header_section_top">
+            <!-- <div class="header_section_top">
                <div class="row">
                   <div class="col-sm-12">
                      <div class="custom_menu">
@@ -59,7 +59,7 @@ $categories=App\Models\Category::latest()->get();
                      </div>
                   </div>
                </div>
-            </div>
+            </div> -->
          </div>
          <!-- header top section start -->
          <!-- logo section start -->
@@ -79,7 +79,7 @@ $categories=App\Models\Category::latest()->get();
                <div class="containt_main">
                   <div id="mySidenav" class="sidenav">
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                     <a href="index.html">Home</a>
+                     <a href="{{route('Home')}}">Home</a>
                           
                             @foreach($categories as $category)
                             <a href="{{route('category',[$category->id,$category->slug])}}">{{$category->category_name}}</a>
@@ -101,17 +101,19 @@ $categories=App\Models\Category::latest()->get();
                   <div class="main">
                      <!-- Another variation with a button -->
                      <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search this blog">
-                        <div class="input-group-append">
-                           <button class="btn btn-secondary" type="button" style="background-color: #f26522; border-color:#f26522 ">
-                           <i class="fa fa-search"></i>
-                           </button>
-                        </div>
+                     <form action="{{ route('search') }}" method="GET" class="form-inline w-100">
+                <input type="text" name="query" class="form-control" placeholder="Search products" value="{{ request('query') }}" style="flex: 1;">
+                  <div class="input-group-append">
+                  <button class="btn btn-secondary" type="submit" style="background-color: #f26522; border-color:#f26522">
+                  <i class="fa fa-search"></i>
+                  </button>
+                  </div>
+                     </form>
                      </div>
                   </div>
                   <div class="header_box">
                      <div class="lang_box ">
-                        <a href="#" title="Language" class="nav-link" data-toggle="dropdown" aria-expanded="true">
+                        <!-- <a href="#" title="Language" class="nav-link" data-toggle="dropdown" aria-expanded="true">
                         <img src="{{asset('home/images/flag-uk.png')}}" alt="flag" class="mr-2 " title="United Kingdom"> English <i class="fa fa-angle-down ml-2" aria-hidden="true"></i>
                         </a>
                         <div class="dropdown-menu ">
@@ -119,11 +121,11 @@ $categories=App\Models\Category::latest()->get();
                            <img src="{{asset('home/images/flag-france.png')}}" class="mr-2" alt="flag">
                            French
                            </a>
-                        </div>
+                        </div> -->
                      </div>
                      <div class="login_menu">
                         <ul>
-                           <li><a href="#">
+                           <li><a href="{{route('userprofile')}}">
                               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                               <span class="padding_10">Cart</span></a>
                            </li>
@@ -207,14 +209,14 @@ $categories=App\Models\Category::latest()->get();
                   <li><a href="#">Customer Service</a></li>
                </ul>
             </div>
-            <div class="location_main">Help Line  Number : <a href="#">+1 1800 1200 1200</a></div>
+            <div class="location_main">Help Line  Number : <a href="#">01721459876</a></div>
          </div>
       </div>
       <!-- footer section end -->
       <!-- copyright section start -->
       <div class="copyright_section">
          <div class="container">
-            <p class="copyright_text">© All Rights Reserved. Design by <a href="https://html.design">Free html  Templates</a></p>
+            <p class="copyright_text">© All Rights Reserved by Mim</a></p>
          </div>
       </div>
       <!-- copyright section end -->

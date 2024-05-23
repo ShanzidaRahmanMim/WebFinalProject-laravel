@@ -28,11 +28,24 @@ Route::controller(ClientController::class)->group(function(){
     Route::get('/category{id}/{slug}','CategoryPage')->name('category');
     Route::get('/product-details/{id}/{slug}','SingleProduct')->name('singleproduct');
     Route::get('/add-to-cart','AddToCart')->name('addtocart');
+    Route::post('/add-product-to-cart','AddProductToCart')->name('addproducttocart')->middleware('auth');
+    Route::get('/shipping-address','GetShippingAddress')->name('shippingaddress');
+    Route::post('/add-shipping-address','AddShippingAddress')->name('addshippingaddress');
+    Route::post('/place-order','PlaceOrder')->name('placeorder');
+    Route::get('/pay-online/{total}','PayOnline')->name('payonline');
+    Route::post('/stripe/{total}', 'stripePost')->name('stripe.post');
     Route::get('/checkout','Checkout')->name('checkout');
-    Route::get('/user-profile','UserProfile')->name('userprofile');
+    Route::get('/user-profile','UserProfile')->name('userprofile')->middleware('auth');
+    Route::get('/user-profile/pending-orders','PendingOrders')->name('pendingorders')->middleware('auth');
+    Route::get('/user-profile/logout','Logout')->name('logout');
+    Route::get('/search','Search')->name('search');
+    Route::get('/products/{slug}','Show')->name('products_show');
+
+
     Route::get('/new-release','NewRelease')->name('newrelease');
     Route::get('/todays-deal','TodaysDeal')->name('todaysdeal');
     Route::get('/customer-service','CustomerService')->name('customerservice');
+    Route::get('/remove-cart-item/{id}','RemoveCartItem')->name('removeitem'); 
 });
 //Route::get('/userprofile',[DashboardController::class,'Index']);
 Route::controller(DashboardController::class)->group(function()
@@ -47,7 +60,9 @@ Route::controller(DashboardController::class)->group(function()
     Route::post('/admin/reset-password-submit','ResetPasswordSubmit')->name('reset_password_submit');
     Route::post('/admin/registration-submit','RegistrationSubmit')->name('registrationsubmit');
     Route::get('/registration/verify/{token}/{email}','VerifyRegistration')->name('verifyregistration');
-    Route::get('/admin/dashboard','Index')->name('admindashboard')->middleware('auth');
+    Route::get('/admin/dashboard','Index')->name('admindashboard')->middleware('admin');
+    
+
 
         
 });
@@ -83,5 +98,9 @@ Route::controller(ProductController::class)->group(function()
 Route::controller(OrderController::class)->group(function()
 {
     Route::get('/admin/pending-order','Index')->name('pendingorder');
+    Route::post('/admin/orders/confirm/{id}','confirmOrder')->name('admin.orders.confirm');
     
+    Route::post('/admin/orders/remove/{id}', 'removeOrder')->name('admin.orders.remove');
+
+
 });
