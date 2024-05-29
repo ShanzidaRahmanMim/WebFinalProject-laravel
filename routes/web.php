@@ -68,32 +68,32 @@ Route::controller(DashboardController::class)->group(function()
 });
 Route::controller(CategoryController::class)->group(function()
 {
-    Route::get('/admin/all-category','Index')->name('allcategory');
-    Route::get('/admin/add-category','AddCategory')->name('addcategory');
-    Route::post('/admin/store-category','StoreCategory')->name('storecategory');    
-    Route::get('/admin/edit-category/{id}','EditCategory')->name('editcategory'); 
-    Route::post('/admin/update-category','UpdateCategory')->name('updatecategory');       
-    Route::get('/admin/delete-category/{id}','DeleteCategory')->name('deletecategory'); 
+    Route::get('/admin/all-category','Index')->name('allcategory')->middleware('admin');
+    Route::get('/admin/add-category','AddCategory')->name('addcategory')->middleware('admin');
+    Route::post('/admin/store-category','StoreCategory')->name('storecategory')->middleware('admin');    
+    Route::get('/admin/edit-category/{id}','EditCategory')->name('editcategory')->middleware('admin'); 
+    Route::post('/admin/update-category','UpdateCategory')->name('updatecategory')->middleware('admin');       
+    Route::get('/admin/delete-category/{id}','DeleteCategory')->name('deletecategory')->middleware('admin'); 
 });
 Route::controller(SubCategoryController::class)->group(function()
 {
-    Route::get('/admin/all-subcategory','Index')->name('allsubcategory');
-    Route::get('/admin/add-subcategory','AddSubCategory')->name('addsubcategory');   
-    Route::post('/admin/store-subcategory','StoreSubCategory')->name('storesubcategory');    
-    Route::get('/admin/edit-subcategory/{id}','EditSubCategory')->name('editsubcat');   
-    Route::get('/admin/delete-subcategory/{id}','DeleteSubCategory')->name('deletesubcat');
-    Route::post('/admin/update-subcategory','UpdateSubCat')->name('updatesubcat'); 
+    Route::get('/admin/all-subcategory','Index')->name('allsubcategory')->middleware('admin');
+    Route::get('/admin/add-subcategory','AddSubCategory')->name('addsubcategory')->middleware('admin');   
+    Route::post('/admin/store-subcategory','StoreSubCategory')->name('storesubcategory')->middleware('admin');    
+    Route::get('/admin/edit-subcategory/{id}','EditSubCategory')->name('editsubcat')->middleware('admin');   
+    Route::get('/admin/delete-subcategory/{id}','DeleteSubCategory')->name('deletesubcat')->middleware('admin');
+    Route::post('/admin/update-subcategory','UpdateSubCat')->name('updatesubcat')->middleware('admin'); 
 });
 Route::controller(ProductController::class)->group(function()
 {
-    Route::get('/admin/all-products','Index')->name('allproducts');
-    Route::get('/admin/add-product','AddProduct')->name('addproduct');   
-    Route::post('/admin/store-product','StoreProduct')->name('storeproduct');
-    Route::get('/admin/edit-product-img/{id}','EditProductImg')->name('editproductimg');
-    Route::post('/admin/update-product-img','UpdateProductImg')->name('updateproductimg');
-    Route::get('/admin/edit-product/{id}','EditProduct')->name('editproduct');
-    Route::post('/admin/update-product','UpdateProduct')->name('updateproduct');
-    Route::get('/admin/delete-product/{id}','DeleteProduct')->name('deleteproduct');
+    Route::get('/admin/all-products','Index')->name('allproducts')->middleware('admin');
+    Route::get('/admin/add-product','AddProduct')->name('addproduct')->middleware('admin');   
+    Route::post('/admin/store-product','StoreProduct')->name('storeproduct')->middleware('admin');
+    Route::get('/admin/edit-product-img/{id}','EditProductImg')->name('editproductimg')->middleware('admin');
+    Route::post('/admin/update-product-img','UpdateProductImg')->name('updateproductimg')->middleware('admin');
+    Route::get('/admin/edit-product/{id}','EditProduct')->name('editproduct')->middleware('admin');
+    Route::post('/admin/update-product','UpdateProduct')->name('updateproduct')->middleware('admin');
+    Route::get('/admin/delete-product/{id}','DeleteProduct')->name('deleteproduct')->middleware('admin');
 });
 Route::controller(OrderController::class)->group(function()
 {

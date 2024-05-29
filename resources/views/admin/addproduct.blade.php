@@ -18,19 +18,19 @@ Add Product - Beauty Bloom
                        <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Product Name</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Enter category name" />
+                            <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Enter product name" />
                           </div>
                         </div>
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Product Price</label>
                           <div class="col-sm-10">
-                            <input type="number" class="form-control" id="price" name="price" placeholder="Enter category name" />
+                            <input type="number" class="form-control" id="price" name="price" placeholder="Enter price" />
                           </div>
                         </div>
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Product Quantity</label>
                           <div class="col-sm-10">
-                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter category name" />
+                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter quantity" />
                           </div>
                         </div>
                         <div class="row mb-3">

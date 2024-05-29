@@ -4,36 +4,28 @@ $categories=App\Models\Category::latest()->get();
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <!-- basic -->
+      
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>Eflyer</title>
+      
+      <title>Beauty Bloom</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
-      <!-- bootstrap css -->
       <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.min.css')}}">
       <!-- style css -->
       <link rel="stylesheet" type="text/css" href="{{asset('home/css/style.css')}}">
-      <!-- Responsive-->
       <link rel="stylesheet" href="{{asset('home/css/responsive.css')}}">
-      <!-- fevicon -->
       <link rel="icon" href="{{asset('home/images/fevicon.png')}}" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="{{asset('home/css/jquery.mCustomScrollbar.min.css')}}">
-      <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <!-- fonts -->
       <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-      <!-- font awesome -->
       <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!--  -->
-      <!-- owl stylesheets -->
+      
       <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
       <link rel="stylesheet" href="{{asset('home/css/owl.carousel.min.css')}}">
       <link rel="stylesoeet" href="{{asset('home/css/owl.theme.default.min.css')}}">
@@ -42,7 +34,7 @@ $categories=App\Models\Category::latest()->get();
    <body>
       <!-- banner bg main start -->
       <div class="banner_bg_main">
-         <!-- header top section start -->
+         
          <div class="container">
             <!-- <div class="header_section_top">
                <div class="row">
@@ -67,12 +59,15 @@ $categories=App\Models\Category::latest()->get();
             <div class="container">
                <div class="row">
                   <div class="col-sm-12">
-                     <div class="logo"><a href="index.html"><img src="{{asset('home/images/logo.png')}}"></a></div>
+                     <div class="logo">
+                        <!-- <a href="index.html">
+                        <img src="{{asset('home/images/logo.jpg')}}"></a> -->
+                     </div>
                   </div>
                </div>
             </div>
          </div>
-         <!-- logo section end -->
+         
          <!-- header section start -->
          <div class="header_section">
             <div class="container">
@@ -87,7 +82,7 @@ $categories=App\Models\Category::latest()->get();
                      
                      
                   </div>
-                  <span class="toggle_icon" onclick="openNav()"><img src="{{asset('home/images/toggle-icon.png')}}"></span>
+                  <span class="toggle_icon" onclick="openNav()"><img src="{{asset('home/images/toggle-icon.png')}}" width="55px"></span>
                   <div class="dropdown">
                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category 
                      </button>
@@ -99,7 +94,7 @@ $categories=App\Models\Category::latest()->get();
                      </div>
                   </div>
                   <div class="main">
-                     <!-- Another variation with a button -->
+                     
                      <div class="input-group">
                      <form action="{{ route('search') }}" method="GET" class="form-inline w-100">
                 <input type="text" name="query" class="form-control" placeholder="Search products" value="{{ request('query') }}" style="flex: 1;">
@@ -113,15 +108,7 @@ $categories=App\Models\Category::latest()->get();
                   </div>
                   <div class="header_box">
                      <div class="lang_box ">
-                        <!-- <a href="#" title="Language" class="nav-link" data-toggle="dropdown" aria-expanded="true">
-                        <img src="{{asset('home/images/flag-uk.png')}}" alt="flag" class="mr-2 " title="United Kingdom"> English <i class="fa fa-angle-down ml-2" aria-hidden="true"></i>
-                        </a>
-                        <div class="dropdown-menu ">
-                           <a href="#" class="dropdown-item">
-                           <img src="{{asset('home/images/flag-france.png')}}" class="mr-2" alt="flag">
-                           French
-                           </a>
-                        </div> -->
+                        
                      </div>
                      <div class="login_menu">
                         <ul>
@@ -143,7 +130,7 @@ $categories=App\Models\Category::latest()->get();
                </div>
             </div>
          </div>
-         <!-- header section end -->
+         
          <!-- banner section start -->
          <div class="banner_section layout_padding">
             <div class="container">
@@ -153,16 +140,16 @@ $categories=App\Models\Category::latest()->get();
                         <div class="row">
                            <div class="col-sm-12">
                               <h1 class="banner_taital">Get Start <br>Your favourite shopping</h1>
-                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                              <!-- <div class="buynow_bt"><a href="#">Buy Now</a></div> -->
                            </div>
                         </div>
                      </div>
                      <div class="carousel-item">
                         <div class="row">
                            <div class="col-sm-12">
-                              <h1 class="banner_taital">Get Start <br>Your favourite shopping</h1>
+                              <h1 class="banner_taital">Make your <br>look more gorgeous</h1>
                              
-                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                              <!-- <div class="buynow_bt"><a href="#">Buy Now</a></div> -->
                            </div>
                         </div>
                      </div>
@@ -170,7 +157,7 @@ $categories=App\Models\Category::latest()->get();
                         <div class="row">
                            <div class="col-sm-12">
                               <h1 class="banner_taital">Get Start <br>Your favourite shopping</h1>
-                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                              <!-- <div class="buynow_bt"><a href="#">Buy Now</a></div> -->
                            </div>
                         </div>
                      </div>
@@ -184,7 +171,7 @@ $categories=App\Models\Category::latest()->get();
                </div>
             </div>
          </div>
-         <!-- banner section end -->
+        
       </div>
       <!-- banner bg main end -->
       <div class="container py-5" style="margin-top:200px;" >
@@ -195,19 +182,19 @@ $categories=App\Models\Category::latest()->get();
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
-            <div class="footer_logo"><a href="index.html"><img src="{{asset('home/images/footer-logo.png')}}"></a></div>
+            <div class="footer_logo"><a href=""><img src="{{asset('home/images/footer-logo.jpg')}}"></a></div>
             <div class="input_bt">
                <input type="text" class="mail_bt" placeholder="Your Email" name="Your Email">
                <span class="subscribe_bt" id="basic-addon2"><a href="#">Subscribe</a></span>
             </div>
             <div class="footer_menu">
-               <ul>
+               <!-- <ul>
                   <li><a href="#">Best Sellers</a></li>
                   <li><a href="#">Gift Ideas</a></li>
                   <li><a href="#">New Releases</a></li>
                   <li><a href="#">Today's Deals</a></li>
                   <li><a href="#">Customer Service</a></li>
-               </ul>
+               </ul> -->
             </div>
             <div class="location_main">Help Line  Number : <a href="#">01721459876</a></div>
          </div>
@@ -219,7 +206,6 @@ $categories=App\Models\Category::latest()->get();
             <p class="copyright_text">© All Rights Reserved by Mim</a></p>
          </div>
       </div>
-      <!-- copyright section end -->
       <!-- Javascript files-->
       <script src="{{asset('home/js/jquery.min.js')}}"></script>
       <script src="{{asset('home/js/popper.min.js')}}"></script>

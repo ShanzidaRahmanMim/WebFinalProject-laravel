@@ -215,7 +215,7 @@ button {
     width: 100%;
     float: left;
     background-image: url(../images/banner-bg.png);
-    height: auto;
+    height: 90vh;
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -571,7 +571,7 @@ a:hover {
 
 .box_main {
     width: 100%;
-    background-color: #ffffff;
+    background-color: white;
     height: auto;
     padding: 20px;
     box-shadow: 0px 0 30px 10px #f0f0f0;
@@ -920,10 +920,7 @@ input.mail_bt::placeholder {
 }
 
 
-/* footer section end */
 
-
-/* copyright section start */
 
 .copyright_section {
     width: 100%;
@@ -954,4 +951,81 @@ input.mail_bt::placeholder {
 }
 
 
-/* copyright section end */
+
+
+
+/* General styling for the product boxes */
+.vibrant-box {
+    border: 2px solid #f7d047; /* Vibrant border color */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vibrant-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the product name */
+.shirt_text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Styling for the price text */
+.price_text {
+    font-size: 1.2rem;
+    color: #f57c00;
+}
+
+.price_amount {
+    font-weight: bold;
+}
+
+/* Styling for the product image */
+.tshirt_img img {
+    max-height: 400px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+/* Styling for the buttons */
+.buy_bt, .seemore_bt {
+    margin-top: 10px;
+}
+
+.buy_btn {
+    background-color: #f7d047;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.buy_btn:hover {
+    background-color: #e6b730;
+}
+
+.see_more_link {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.see_more_link:hover {
+    background-color: #555;
+}

@@ -20,7 +20,7 @@ All SubCategory - Beauty Bloom
                         <th>Id</th>
                         <th>Sub Category Name</th>
                         <th>Category</th>
-                        <th>Product</th>
+                        <!-- <th>Product</th> -->
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -30,7 +30,7 @@ All SubCategory - Beauty Bloom
                         <td>{{$subcategory->id}}</td>
                         <td>{{$subcategory->subcategory_name}}</td>
                         <td>{{$subcategory->category_name}}</td>
-                        <td>{{$subcategory->product_count}}</td>
+                        <!-- <td>{{$subcategory->product_count}}</td> -->
                         <td>
                             <a href="{{route('editsubcat',$subcategory->id)}}" class="btn btn-primary">Edit</a>
                             <a href="{{route('deletesubcat',$subcategory->id)}}" class="btn btn-warning">Delete</a>

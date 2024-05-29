@@ -136,9 +136,11 @@ class ClientController extends Controller
           
          return view('user_template.pendingorders',compact('pending_orders'));
     }
-    public function Logout()
+    public function Logout(Request $request)
     {
         Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
         return redirect()->route('login');
     }
 
@@ -160,16 +162,5 @@ class ClientController extends Controller
             $product = Product::where('slug', $slug)->firstOrFail();
             return view('user_template.products_show', compact('product'));
         }
-    public function NewRelease()
-    {
-         return view('user_template.newrelease');
-    }
-    public function TodaysDeal()
-    {
-         return view('user_template.todaysdeal');
-    }
-    public function CustomerService()
-    {
-         return view('user_template.customerservice');
-    }
+    
 }

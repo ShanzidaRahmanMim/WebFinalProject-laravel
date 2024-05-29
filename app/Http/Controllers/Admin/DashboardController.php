@@ -44,9 +44,11 @@ class DashboardController extends Controller
             return redirect()->route('login');
         }
     }
-    public function Logout()
+    public function Logout(Request $request)
     {
         Auth::guard('web')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
         return redirect()->route('login');
     }
     public function Registration()

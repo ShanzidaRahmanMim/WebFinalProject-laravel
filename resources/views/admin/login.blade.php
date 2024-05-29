@@ -82,17 +82,24 @@
         @csrf
         <div>
             <label for="email" class="form-label">Email Address</label>
-            <input type="text" id="email" name="email" required>
+            <input type="text" id="email" name="email" autocomplete="off" required>
         </div>
         <div>
             <label for="password" class="form-label">Password</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" autocomplete="off" required>
         </div>
         <input type="submit" class="btn" value="Login">
         <br>
         <a href="{{route('forget_password')}}">Forget Password</a>
     </form>
 </div>
+<script>
+    // Clear input fields on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('email').value = '';
+        document.getElementById('password').value = '';
+    });
+</script>
 
 </body>
 </html>
